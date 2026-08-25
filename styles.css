@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(255, 194, 194);
+    font-family: " Spectral", serif;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: center"
+
+}
+
+h1 {
+
+    border: 2px solid Violet;
+}
+
+h2 {
+    background-color: Violet;
+
+}
+
+
+.container {
+    border: 2px solid black;
+    width: 1000px;
+}

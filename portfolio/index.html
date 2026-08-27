@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title> My Portfolio</title>
+    <style>
+        /* Base Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f4f4f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Typography & Spacing helpers */
+        header,
+        nav,
+        main,
+        aside,
+        footer,
+        article {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* 1. Header & Navigation */
+        header {
+            background: #abff87;
+            color: rgb(8, 74, 12);
+            text-align: center;
+        }
+
+        nav {
+            background: #f3b0d9;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        nav a {
+            color: rgb(181, 59, 209);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            font-weight: lighter;
+        }
+
+        /* 2. THE FLEXBOX LAYOUT CONTAINER */
+        /* We use a generic 'div' here because it serves purely for CSS layout alignment */
+        .layout-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 15px auto;
+            padding: 0 10px;
+        }
+
+        /* 3. Main Content Area (Takes 3x space) */
+        main {
+            background: rgb(255, 255, 255);
+            flex: 3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        article {
+            background: #ffb3f5;
+            border: 1px solid #ebe2f0;
+        }
+
+        /* 4. Sidebar Area (Takes 1x space) */
+        aside {
+            background: #f8bfef;
+            flex: 1;
+            height: fit-content;
+        }
+
+        /* 5. Footer */
+        footer {
+            background: #abff87;
+            color: rgb(13, 97, 44);
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* 6. Responsive Breakdown for Mobile Devices */
+        @media (max-width: 768px) {
+            .layout-wrapper {
+                flex-direction: column;
+                /* Stacks sidebar under content on mobile */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1> Javeria's Portfolio</h1>
+    </header>
+
+</body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">Hobbies</a>
+    <a href="#">Experience</a>
+</nav>
+
+<div class="layout-wrapper">
+    <main>
+        <h2> Recent Projects</h2>
+        <p> Learning Web development through portfolio development/p>
+
+        <article>
+            <h3> Raytracing Project</h3>
+            <p> A cyberpunk gas station scene with motorbike and car</p>
+            <p> Post processing Bloom </p>
+            <a href="https://raytracing-project.vercel.app/" target="_blank">Visit documentation</a>
+        </article>
+    </main>
+
+    <!-- Sidebar-->
+    <aside>
+        <h3> Sidebar</h3>
+        <p> This is a simple sidebar for additional information.</p>
+    </aside>
+
+</div>
+
+<footer>
+    <p> &copy 2026 My Portfolio - All rights reserved </p>
+</footer>
+
+</html>

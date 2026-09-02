@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML API Example</title>
+
+</head>
+
+<body>
+    <h1> Web Storage API</h1>
+    <p> Save your name in the broswer using <code>localStorage</code>.</p>
+    <label for="name">Name:</label>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="age" type="number" placeholder="Enter your age">
+
+    <button id="saveButton" type="button">Save</button>
+    <button id="clearButton" type="button">Clear</button>
+    <p id="message_name"></p>
+    <p id="message_age"></p>
+    ;
+    <script>
+        // let a = true;
+        // let b = false;
+        // let andResult = a && b; // false
+        // document.getElementById("output1").innerHTML = "The result of a AND b is: " + andResult;
+
+        // let age = 20;
+        // let name = "ali";
+        // let ageAndName = age > 18 && name === "ali"; // true, === checks name value and data type
+        // document.getElementById("output2").innerHTML = "The result of age AND name is: " + ageAndName;
+
+        // //Logical OR (||)
+        // let c = true;
+        // let d = false;
+        // let orResult = c || d; // true
+        // document.getElementById("output3").innerHTML = "The result of c OR d is: " + orResult;
+
+        const nameInput = document.getElementById('name');
+        const ageInput = document.getElementById('age');
+
+        const message_name = document.getElementById('message_name')
+        const m_age = document.getElementById('message_age')
+
+        function showSavedName() {
+            const savedName = localStorage.getItem("studentName");
+            if (savedName) {
+                nameInput.value = savedName;
+                message_name.textContent = `Welcome back, ${savedName}!`;
+            } else {
+                message_name.textContent = "No name has been saved yet.";
+            }
+        }
+
+        function showSavedAge() {
+            const savedAge = localStorage.getItem("studentAge");
+            if (savedAge) {
+                ageInput.value = savedAge;
+                message_age.textContent = `You are ${savedAge} years old.`;
+            } else {
+                message_age.textContent = "No age has been saved yet.";
+            }
+        }
+
+        document.getElementById("saveButton").addEventListener("click", () => {
+            const name = nameInput.value.trim();
+            const age = ageInput.value.trim();
+
+            if (name) { //if there is a value in the name variable (input) we save it
+                localStorage.setItem("studentName", name);
+                showSavedName();
+            } else {
+                message_name.textContent = "Please enter a name first.";
+            }
+
+            if (age) { //if there is a value in the age variable (input) we save it
+                localStorage.setItem("studentAge", age);
+                showSavedAge();
+            } else {
+                message_age.textContent = "Please enter your age first.";
+            }
+        });
+
+        document.getElementById("clearButton").addEventListener("click", () => {
+            localStorage.removeItem("studentName");
+            localStorage.removeItem("studentAge");
+            nameInput.value = "";
+            ageInput.value = "";
+            message_name.textContent = "Name cleared from local Storage.";
+            message_age.textContent = "Age cleared from local Storage.";
+        });
+
+        showSavedName();
+        showSavedAge();
+    </script>
+</body>
+
+</html>
